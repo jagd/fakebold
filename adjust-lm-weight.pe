@@ -1,0 +1,20 @@
+#!/user/bin/fontforge
+
+Open("origin/"+$1)
+SelectAll()
+Simplify() # Simplify solves the problem for \times in lm-math
+# ChangeWeight() except 2,3,4,5,6, and some value > 20 will cause "s" in lmroman8-regular to be cut
+i = 0
+while(i < Strtol($2))
+    ChangeWeight(Strtod($3))
+    ++i
+endloop
+# Vertical scaling will cause vertical misaligment in words
+# scaling lm-math will cause issue in Adobe Reader
+if($4 == "true")
+    Scale(95, 100)
+endif
+RemoveOverlap()
+# AutoHint()
+Generate($1)
+Close()

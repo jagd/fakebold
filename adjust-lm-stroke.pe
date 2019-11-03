@@ -1,0 +1,30 @@
+#!/user/bin/fontforge
+#
+Open("origin/"+$1)
+SelectAll()
+# We may not have problem with \times by stroking
+# Simplify()
+joinstyle = 0 # rectangle miter
+i = 0
+while (i < Strtod($2))
+    # To avoid "s" in lmroman8-regular to be cut,
+    # each step should have a width of 2,3,4,5,6
+    ExpandStroke(Strtol($3), 1, joinstyle, 0, 1)
+    ++i
+endloop
+RemoveOverlap()
+#
+# Without manually re-hinting, the fonts are not displayed correctly.
+# For example:
+#
+# The word "calculate" in lmroman8-regular with the original hint
+# will seem to have an inflat baseline.
+#
+# AutoHint() causes imperfect Hints e.g. for the word "curvature" in
+# lmroman8-regular.
+#
+ClearHints()
+Simplify()
+RoundToInt()
+Generate($1)
+Close()
