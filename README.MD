@@ -5,4 +5,4 @@ A thicker variant of Latin Modern Roman. Details see my [blog article](https://t
 ```./adjust-lm.sh```
 
 # Download the Font
-[fakebold.zip](https://github.com/jagd/fakebold/releases/download/v1.0/fakebold.zip)
+[fakebold.zip](https://github.com/jagd/fakebold/releases/download/v1.01/fakebold.zip)

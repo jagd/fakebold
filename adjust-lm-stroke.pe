@@ -1,7 +1,13 @@
 #!/user/bin/fontforge
 #
 Open("origin/"+$1)
-SelectAll()
+# Exclude the frak math non-bold fonts
+u=120068
+while(u <= 120119)
+   SelectMoreIf(UCodePoint(u))
+   ++u
+endloop
+SelectInvert()
 # We may not have problem with \times by stroking
 # Simplify()
 joinstyle = 0 # rectangle miter
