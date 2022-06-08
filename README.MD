@@ -10,6 +10,10 @@ A thicker variant of Latin Modern Roman. Details see my [blog article](https://t
 [thick-lm-pfb.zip](https://github.com/jagd/fakebold/releases/download/v1.1/thick-lm-pfb.zip)  
 (extract `pfb` to `~/texmf/fonts/type1/public/lm/`)
 
+# See also
+
+Similar process applied to [cm-super](https://github.com/jagd/Thick-CM)
+
 # Changelog
 ## v1.1
 - Add lm type1 fonts
